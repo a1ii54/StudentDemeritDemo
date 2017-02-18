@@ -1,11 +1,12 @@
 package com.student.userinterface.menus;
 
+import com.student.model.User;
 import com.student.service.StudentServiceInterface;
 
-import java.util.Scanner;
+import java.util.*;
 import java.util.function.BiConsumer;
 
-public class LoginUserInterface extends AbstractMenuInterface implements BiConsumer<Scanner, StudentServiceInterface> {
+public class LoginUserInterface extends AbstractFormInterface implements BiConsumer<Scanner, StudentServiceInterface> {
 
     @Override
     public void accept(Scanner scanner, StudentServiceInterface studentServiceInterface) {
@@ -14,7 +15,30 @@ public class LoginUserInterface extends AbstractMenuInterface implements BiConsu
 
     private void loginMenu(Scanner scanner, StudentServiceInterface studentServiceInterface) {
 
-        System.out.println("Big Whhooooop -> Login");
+        String formName = "Login Form";
+        ArrayList<String> fields = new ArrayList<>();
+        fields.add("Username");
+        fields.add("Password");
+        Map<String, String> answers = new HashMap<>();
+
+        doForm(scanner, formName, fields, answers);
+
+        if(answers.size() == 2){
+            User user = new User(
+                    null,
+                    answers.get("Username"),
+                    null,
+                    null,
+                    answers.get("Password")
+            );
+
+            boolean success = studentServiceInterface.login(user);
+            if(success){
+                System.out.println("Login Successful!");
+            } else {
+                System.out.println("Login Failed!");
+            }
+        }
 
     }
 
