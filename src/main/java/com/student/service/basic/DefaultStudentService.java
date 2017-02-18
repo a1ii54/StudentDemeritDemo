@@ -1,7 +1,8 @@
-package com.student.service;
+package com.student.service.basic;
 
 import com.student.data.DataInterface;
 import com.student.model.User;
+import com.student.service.StudentServiceInterface;
 
 public class DefaultStudentService implements StudentServiceInterface {
 

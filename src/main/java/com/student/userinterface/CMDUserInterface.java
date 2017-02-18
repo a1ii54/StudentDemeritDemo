@@ -1,8 +1,12 @@
 package com.student.userinterface;
 
 import com.student.service.StudentServiceInterface;
+import com.student.userinterface.menus.LoginUserInterface;
+import com.student.userinterface.menus.MainMenuInterface;
+import com.student.userinterface.menus.RegistrationUserInterface;
 
-import java.util.Scanner;
+import java.util.*;
+import java.util.function.BiConsumer;
 
 public class CMDUserInterface implements Runnable {
 
@@ -17,12 +21,7 @@ public class CMDUserInterface implements Runnable {
 
     public void run() {
         try{
-            String input;
-            do{
-                input = scanner.nextLine();
-                System.out.println("For the lolz");
-            }while ("exit".equalsIgnoreCase(input) == false);
-
+            new MainMenuInterface().accept(scanner, studentServiceInterface);
         } catch (Throwable t){
             t.printStackTrace();
         }
