@@ -1,4 +1,4 @@
-package com.student.userinterface.menus;
+package com.student.userinterface.Forms;
 
 import com.student.model.User;
 import com.student.service.StudentServiceInterface;

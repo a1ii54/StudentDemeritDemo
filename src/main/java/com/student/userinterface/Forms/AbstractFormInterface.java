@@ -1,4 +1,4 @@
-package com.student.userinterface.menus;
+package com.student.userinterface.Forms;
 
 import java.util.ArrayList;
 import java.util.Map;

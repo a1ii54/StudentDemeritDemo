@@ -1,6 +1,8 @@
 package com.student.userinterface.menus;
 
 import com.student.service.StudentServiceInterface;
+import com.student.userinterface.Forms.LoginUserInterface;
+import com.student.userinterface.Forms.RegistrationUserInterface;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,12 +1,9 @@
 package com.student.userinterface;
 
 import com.student.service.StudentServiceInterface;
-import com.student.userinterface.menus.LoginUserInterface;
 import com.student.userinterface.menus.MainMenuInterface;
-import com.student.userinterface.menus.RegistrationUserInterface;
 
 import java.util.*;
-import java.util.function.BiConsumer;
 
 public class CMDUserInterface implements Runnable {
 
